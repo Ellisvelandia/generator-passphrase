@@ -1,0 +1,128 @@
+/* For later use */
+/* xs */
+/* @media (min-width: 475px) {} */
+/* sm */
+/* @media (min-width: 640px) {} */
+/* md */
+/* @media (min-width: 768px) {} */
+/* lg */
+/* @media (min-width: 1024px) {} */
+/* xl */
+/* @media (min-width: 1280px) {} */
+/* xxl */
+/* @media (min-width: 1536px) {} */
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /* border: 1px solid dodgerblue; */
+}
+
+.section {
+    padding: var(--size-xxs);
+}
+
+.btn {
+    display: inline-block;
+    font-family: var(--ff-opensans);
+    font-weight: 600;
+    font-size: var(--size-sm);
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    color: var(--clr-slate200);
+    padding: var(--size-base) var(--size-2xl);
+    margin: auto 0;
+    border-radius: 50px;
+    background: radial-gradient(
+        137.27% 931.06% at 96.08% 0%, #3CB3C3 0%, #0B0F2FF7 100%
+    );
+    text-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+    box-shadow: 0 0 100px -10px #3CB3C3;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 120px -10px #3CB3C3;
+}
+
+.span1 {
+    color: var(--clr-sky);
+}
+
+.span2 {
+    color: var(--clr-slate400);
+}
+
+/* xs */
+@media (min-width: 475px) {
+    .container {
+        max-width: 475px;
+    }
+
+    .section {
+        padding: var(--size-xxs) var(--size-sm);
+    }
+
+    .btn {
+        padding: var(--size-2xl) var(--size-5xl);
+        font-size: var(--size-base);
+    }
+}
+/* sm */
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+}
+/* md */
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+
+    .section {
+        padding: var(--size-xs) var(--size-5xl);
+    }
+
+    .btn {
+        padding: var(--size-base) var(--size-2xl);
+    }
+}
+/* lg */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+
+    .section {
+        padding: var(--size-sm) var(--size-7xl);
+    }
+
+    .btn {
+        padding: var(--size-2xl) var(--size-4xl);
+        font-size: var(--size-lg);
+    }
+}
+/* xl */
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+
+    .section {
+        padding: var(--size-base) var(--size-8xl);
+    }
+
+    .btn {
+        padding: var(--size-2xl) var(--size-5xl);
+        font-size: var(--size-xl);
+    }
+}
+/* xxl */
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1536px;
+    }
+}

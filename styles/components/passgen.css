@@ -1,0 +1,310 @@
+.passgen {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.passgen__img  {
+    width: 15rem;
+    margin: 0 auto;
+}
+
+.passgen__img img {
+    display: block;
+    max-width: 100%;
+    user-select: none;
+}
+
+.passgen__content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: var(--size-2xl);
+    flex: 1;
+}
+
+.passgen__title {
+    font-family: var(--ff-merriweather);
+    font-weight: 700;
+    font-size: var(--size-2xl);
+}
+
+.passgen__description {
+    max-width: 60ch;
+    font-size: var(--size-sm);
+    font-family: var(--ff-opensans);
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    padding-bottom: var(--size-xxs);
+}
+
+.passgen__result-wrapper {
+    width: 100%;
+    height: auto;
+    background-color: var(--clr-bgwrapper);
+    border: 0.5px solid var(--clr-sky);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 8fr 0.5fr 0.5fr;
+}
+
+.passgen__result-wrapper:hover {
+    background-color: var(--clr-bgwrapperhover);
+}
+
+.passgen__result-wrapper:has(input:focus),
+.passgen__result-wrapper:has(button:focus) {
+    box-shadow: 0 0 10px var(--clr-sky);
+}
+
+.passgen__result {
+    font-family: var(--ff-opensans);
+    font-weight: 300;
+    font-size: var(--size-xs);
+    display: flex;
+    min-width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--size-xxs);
+}
+
+.passgen__reload-icon,
+.passgen__copy-icon {
+    padding: var(--size-xxs);
+    width: 40px;
+    position: relative;
+}
+
+.passgen__copy-icon::before {
+    font-family: var(--ff-merriweather);
+    font-weight: 700;
+    font-size: var(--size-xs);
+    content: "copied to clipboard";
+    white-space: nowrap;
+    text-transform: uppercase;
+    position: absolute;
+    top: -25px;
+    right: 20px;
+    background-color: var(--clr-sky);
+    color: var(--clr-bgwrapper);
+    padding: var(--size-xxs) var(--size-xs);
+    border-radius: 5px;
+    text-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+    display: none;
+}
+
+.passgen__copy-icon.visible::before {
+    display: block;
+    animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.passgen__copy-icon.hidden::before {
+    display: block;
+    animation: fadeOut 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+    }
+    0% {
+        opacity: 1;
+    }
+}
+
+/* checkbox */
+.passgen__select-wrapper {
+    display: flex;
+    gap: 2rem;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.checkbox-container label {
+    font-family: var(--ff-opensans);
+    font-weight: 600;
+    font-size: var(--size-sm);
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    display: flex;
+}
+
+.checkbox-container input[type="checkbox"] {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-container label::before {
+    content: "";
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 0.5px solid var(--clr-sky);
+    border-radius: 5px;
+    background-color: var(--clr-bgwrapper);
+    backdrop-filter: blur(5px);
+    margin-right: 0.5rem;
+}
+
+.checkbox-container input[type="checkbox"]:hover,
+.checkbox-container label:hover::before {
+    background-color: var(--clr-bgwrapperhover);
+}
+
+.checkbox-container input[type="checkbox"]:focus + label::before {
+    box-shadow: 0 0 5px var(--clr-sky);
+}
+
+.checkbox-container input[type="checkbox"]:checked + label::before {
+    content: url(check.png);
+    background-color: var(--clr-bgwrapperhover);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* xs */
+@media (min-width: 475px) {
+    .passgen {
+        margin-top: 2rem;
+        gap: 1.5rem;
+    }
+    
+    .passgen__img  {
+        width: 17rem;
+    }
+
+    .passgen__title {
+        font-size: var(--size-3xl);
+    }
+    
+    .passgen__description {
+        font-size: var(--size-base);
+        padding-bottom: var(--size-xs);
+    }
+
+    .passgen__reload-icon,
+    .passgen__copy-icon {
+        padding: var(--size-xs);
+        width: 48px;
+    }
+
+    .passgen__copy-icon::before {
+        font-size: var(--size-sm);
+    }
+
+    .checkbox-container label {
+        font-size: var(--size-base);
+    }
+}
+/* sm */
+/* @media (min-width: 640px) {} */
+/* md */
+@media (min-width: 768px) {
+    .passgen {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .passgen__img  {
+        width: 20rem;
+    }
+    
+    .passgen__content {
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+/* lg */
+@media (min-width: 1024px) {
+    .passgen {
+        margin-top: 4rem;
+    }
+    
+    .passgen__img  {
+        width: 24rem;
+    }
+
+    .passgen__title {
+        font-size: var(--size-4xl);
+    }
+    
+    .passgen__description {
+        font-size: var(--size-lg);
+        padding-bottom: var(--size-sm);
+    }
+
+    .passgen__result {
+        font-size: var(--size-sm);
+    }
+
+    .passgen__reload-icon,
+    .passgen__copy-icon {
+        padding: var(--size-sm);
+        width: 56px;
+    }
+
+    .passgen__copy-icon::before {
+        font-size: var(--size-base);
+    }
+
+    .checkbox-container label {
+        font-size: var(--size-lg);
+    }
+}
+/* xl */
+@media (min-width: 1280px) {
+    .passgen {
+        margin-top: 5rem;
+    }
+    
+    .passgen__img  {
+        width: 30rem;
+    }
+
+    .passgen__title {
+        font-size: var(--size-5xl);
+    }
+    
+    .passgen__description {
+        font-size: var(--size-xl);
+        padding-bottom: var(--size-xl);
+    }
+
+    .passgen__result {
+        font-size: var(--size-lg);
+    }
+
+    .passgen__reload-icon,
+    .passgen__copy-icon {
+        padding: var(--size-base);
+        width: 64px;
+    }
+
+    .checkbox-container label {
+        font-size: var(--size-xl);
+    }
+}
+/* xxl */
+/* @media (min-width: 1536px) {} */

@@ -1,0 +1,126 @@
+.footer {
+    background-color: var(--clr-bgwrapper);
+    margin-top: 1rem;
+}
+
+.footer__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: var(--size-xxs);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.footer__title {
+    font-family: var(--ff-opensans);
+    font-weight: 300;
+    font-size: var(--size-base);
+    letter-spacing: 0.05em;
+}
+
+.footer__description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    max-width: 60ch;
+    font-size: var(--size-xs);
+    font-family: var(--ff-opensans);
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    margin-top: 0.5rem;
+}
+
+.footer__description a:link,
+.footer__description a:visited {
+    transition: color 0.3s;
+}
+
+.footer__description a:focus,
+.footer__description a:hover {
+    color: var(--clr-slate400);
+}
+
+.footer__description a:active {
+    color: var(--clr-slate200);
+}
+
+/* xs */
+@media (min-width: 475px) {
+    .footer {
+        margin-top: 2rem;
+    }
+
+    .footer__title {
+        font-size: var(--size-lg);
+    }
+
+    .footer__description {
+        gap: 0.5rem;
+        font-size: var(--size-base);
+        margin-top: 1rem;
+    }
+}
+/* sm */
+/* @media (min-width: 640px) {} */
+/* md */
+@media (min-width: 768px) {
+    .footer {
+        margin-top: 3rem;
+    }
+
+    .footer__content {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .footer__title {
+        font-size: var(--size-xl);
+    }
+}
+/* lg */
+@media (min-width: 1024px) {
+    .footer {
+        margin-top: 4rem;
+    }
+
+    .footer__content {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .footer__title {
+        font-size: var(--size-2xl);
+    }
+
+    .footer__description {
+        gap: 0.75rem;
+        font-size: var(--size-lg);
+        margin-top: 1.5rem;
+    }
+}
+/* xl */
+@media (min-width: 1280px) {
+        .footer {
+        margin-top: 5rem;
+    }
+
+    .footer__content {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .footer__title {
+        font-size: var(--size-3xl);
+    }
+
+    .footer__description {
+        gap: 1rem;
+        font-size: var(--size-xl);
+        margin-top: 2rem;
+    }
+}
+/* xxl */
+/* @media (min-width: 1536px) {} */
